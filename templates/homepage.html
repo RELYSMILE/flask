@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+<!-- {% block title %}{% endblock title%} -->
+
+{% block content %}
+<a href="logout">Logout</a>
+<a href="update">Update Profile</a>
+{% if 'email' in session %}
+    <input type="email" placeholder="{{session['email']}}" readonly>
+{% endif %}
+<p>HOMEPAGE</p>
+{% if 'user' in session %}
+    <p>Welcome {{session['user']}}</p>
+{% endif %}
+
+{% endblock %}
